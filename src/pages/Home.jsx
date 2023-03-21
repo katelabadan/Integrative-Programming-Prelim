@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import ProductCard from "../components/ProductCard"
 
 function Home() {
 
@@ -15,13 +16,8 @@ function Home() {
     return (
         <div className='container'>
             {posts.map((post, i) =>
-                <div className ="card" >
-                    <h1>{post.title}</h1>
-                    <img src={post.images[0]}></img>
-                    <p>{post.description}</p>
-                    <p>price: ₱ {post.price}</p>
-                    <p>discount {post.discountpercentage} % </p>
-                </div>
+                <ProductCard post={post}></ProductCard>   
+                
             )}
         </div>
 
